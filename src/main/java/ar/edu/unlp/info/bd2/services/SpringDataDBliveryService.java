@@ -377,24 +377,24 @@ public List<Order> getSentOrders() {
 
 @Override
 public List<Order> getDeliveredOrdersInPeriod(Date startDate, Date endDate) {
-	return null;
+	return orderRepo.findOrdersBetweenDates(startDate, endDate);
 }
 
 @Override
 public List<Order> getDeliveredOrdersForUser(String username) {
-	return null;
+	return orderRepo.findOrdersByUsername(username);
 }
 
 
 @Override
 public List<Product> getProductsOnePrice() {
-	return null;
+	return productRepo.findOnePrice();
 }
 
 
 @Override
 public List<Product> getSoldProductsOn(Date day) {
-	return null;
+	return productRepo.findSoldProductOn(day);
 }
 
 @Override

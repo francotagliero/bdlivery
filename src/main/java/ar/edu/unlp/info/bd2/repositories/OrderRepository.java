@@ -20,4 +20,9 @@ public interface OrderRepository extends CrudRepository<Order, Long>{
 	@Query("select o from Order o join o.actualState os where os.status=:state" )
 	List <Order> findOrderByStatus( @Param("state") String state);
 
+	@Query("select o from Order o join o.actualState os where os.status='Delivered' and o.client.username=:username")
+	List <Order> findOrdersByUsername( @Param("username") String username);
+	
+	@Query("SELECT distinct o from Order o join o.actualState acstate WHERE acstate.startDate between :startDate and :endDate and acstate.status='Delivered'")
+	List<Order> findOrdersBetweenDates(@Param("startDate") Date start, @Param("endDate") Date end);
 }

@@ -12,7 +12,7 @@ public class DBInitializer {
 
     @Autowired
     DBliveryService service;
-
+    
     public void prepareDB() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
