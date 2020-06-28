@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface DBliveryService extends DBliveryStatisticsService{
+public interface DBliveryService {
     
 	/**
 	 *  Crea y devuelve un nuevo Producto.
@@ -172,6 +172,6 @@ public interface DBliveryService extends DBliveryStatisticsService{
 	 * @param name string a buscar
 	 * @return Lista de productos
 	 */
-	List<Product> getProductByName(String name);
+	List<Product> getProductsByName(String name);
 
 }
